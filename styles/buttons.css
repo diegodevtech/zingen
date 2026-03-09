@@ -44,7 +44,7 @@
     position: absolute;
     /* inherits from .btn father class */
     border-radius: inherit;
-    inset: 1.5px;
+    inset: 1px;
     background-color: var(--bg-color);
   }
   &::after {

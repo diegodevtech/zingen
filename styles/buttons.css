@@ -3,7 +3,7 @@
   --btn-color: var(--bg-color);
 
   border: 0;
-  background-color: transparent;
+  /* background-color: transparent; */
 
   display: flex;
   align-items: center;
@@ -32,4 +32,26 @@
 .btn-lg {
   padding: 1rem 2rem;
   font-size: 1.125rem;
+}
+
+.btn[aria-label] {
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    /* inherits from .btn father class */
+    border-radius: inherit;
+    inset: 1.5px;
+    background-color: var(--bg-color);
+  }
+  &::after {
+    content: attr(aria-label);
+    /* background-color NOOOOOO */
+    background: var(--btn-bg-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+  }
 }
